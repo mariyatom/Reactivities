@@ -19,3 +19,6 @@ dotnet ef database drop -p Persistence -s API
 - application
 - persistence
 - domain
+
+  dotnet new list
+  dotnet new gitignore
