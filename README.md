@@ -14,3 +14,11 @@ dotnet build
 dotnet ef database update -p Persistence  -s API
 
 dotnet ef database drop -p Persistence -s API
+
+- api
+- application
+- persistence
+- domain
+
+  dotnet new list
+  dotnet new gitignore
