@@ -38,6 +38,7 @@ dotnet ef database drop -p Persistence -s API
   2. cd client
   3. npm install
   4. npm run dev
+  
 
  in  vite.config.js update the port details
   server:{
@@ -63,4 +64,10 @@ npm install @fontsource/roboto
 6. 
 
 
+React front end (conti...)
+src-> mkdir app
+src-> mkdir features
 
+
+material ui
+https://mui.com/material-ui/react-app-bar/

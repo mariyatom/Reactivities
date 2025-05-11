@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react'
 import Typography from '@mui/material/Typography'
-import { List, ListItem, ListItemText } from '@mui/material'
+import { CssBaseline, List, ListItem, ListItemText } from '@mui/material'
 import axios from 'axios'
-
-import './App.css'
+import Navbar from './Navbar'
 
 function App() {
   const [activities, setActivities] = useState<Activity[]>([])
@@ -12,16 +11,16 @@ function App() {
 
   useEffect(() => {
     axios
-    .get<Activity[]>('/api/activities')
-    .then((response) => {
-      setActivities(response.data)
-      setIsLoading(false)
-    })
-    .catch((err) => {
-      setError('Failed to fetch activities: ' + err.message)
-      setIsLoading(false)
-    })
-    
+      .get<Activity[]>('/api/activities')
+      .then((response) => {
+        setActivities(response.data)
+        setIsLoading(false)
+      })
+      .catch((err) => {
+        setError('Failed to fetch activities: ' + err.message)
+        setIsLoading(false)
+      })
+
     // Fetch returns a javascript promise
     // fetch('https://localhost:5001/api/activities')
     //   .then((response) => {
@@ -42,6 +41,8 @@ function App() {
 
   return (
     <div>
+      <CssBaseline />
+      <Navbar />
       <Typography variant="h3">Reactivities</Typography>
 
       {isLoading && <Typography>Loading activities...</Typography>}
