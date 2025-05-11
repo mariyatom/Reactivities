@@ -35,9 +35,9 @@ dotnet ef database drop -p Persistence -s API
     
     1.vite
      npm create vite@latest
-  cd client
-  npm install
-  npm run dev
+  2. cd client
+  3. npm install
+  4. npm run dev
 
  in  vite.config.js update the port details
   server:{
