@@ -33,8 +33,8 @@ dotnet ef database drop -p Persistence -s API
 
 2. React
     
-    1.vite
-     npm create vite@latest
+    1. vite
+       - npm create vite@latest
   2. cd client
   3. npm install
   4. npm run dev
