@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react'
+import { Box, Container, CssBaseline } from '@mui/material'
 import Typography from '@mui/material/Typography'
-import { CssBaseline, List, ListItem, ListItemText } from '@mui/material'
 import axios from 'axios'
+import { useEffect, useState } from 'react'
+import ActivityDashboard from '../../features/activities/dashboard/ActivityDashboard'
 import Navbar from './Navbar'
 
 function App() {
@@ -40,7 +41,7 @@ function App() {
   }, [])
 
   return (
-    <div>
+    <Box sx={{ bgcolor: '#eeeeee' }}>
       <CssBaseline />
       <Navbar />
       <Typography variant="h3">Reactivities</Typography>
@@ -50,15 +51,11 @@ function App() {
       {error && <Typography color="error">{error}</Typography>}
 
       {!isLoading && !error && (
-        <List>
-          {activities.map((activity) => (
-            <ListItem key={activity.id}>
-              <ListItemText>{activity.title}</ListItemText>
-            </ListItem>
-          ))}
-        </List>
+        <Container maxWidth="xl" sx={{ mt: 3 }}>
+          <ActivityDashboard activities={activities} />
+        </Container>
       )}
-    </div>
+    </Box>
   )
 }
 

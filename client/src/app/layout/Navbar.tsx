@@ -4,10 +4,9 @@ import {
   Container,
   Toolbar,
   MenuItem,
-  Typography
+  Typography,
 } from '@mui/material'
 import GroupIcon from '@mui/icons-material/Group'
-
 
 function Navbar() {
   return (
@@ -23,8 +22,8 @@ function Navbar() {
           <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
             <Box>
               <MenuItem sx={{ display: 'flex', gap: 2 }}>
-              <GroupIcon fontSize="large" />
-              <Typography variant="h4" fontWeight="bold"></Typography>
+                <GroupIcon fontSize="large" />
+                <Typography variant="h4" fontWeight="bold"></Typography>
               </MenuItem>
             </Box>
           </Toolbar>
