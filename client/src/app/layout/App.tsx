@@ -9,6 +9,9 @@ function App() {
   const [activities, setActivities] = useState<Activity[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [selectedActivity, setSelectedActivity] = useState<
+    Activity | undefined
+  >(undefined)
 
   useEffect(() => {
     axios
@@ -40,6 +43,13 @@ function App() {
     //   })
   }, [])
 
+  const handleSelectActivity = (id:string) => {
+    setSelectedActivity(activities.find((a) => a.id === id))
+  }
+
+  const handleCancelSelectActivity = () => {
+    setSelectedActivity(undefined)
+  }
   return (
     <Box sx={{ bgcolor: '#eeeeee' }}>
       <CssBaseline />
@@ -52,7 +62,9 @@ function App() {
 
       {!isLoading && !error && (
         <Container maxWidth="xl" sx={{ mt: 3 }}>
-          <ActivityDashboard activities={activities} />
+          <ActivityDashboard activities={activities} 
+          selectActivity={handleSelectActivity}
+          cancelSelectActivity={handleCancelSelectActivity}/>
         </Container>
       )}
     </Box>
